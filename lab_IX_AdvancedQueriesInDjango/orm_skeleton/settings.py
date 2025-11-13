@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+import debug_toolbar
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main_app',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'orm_skeleton.urls'
@@ -87,7 +91,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "lab_9_advanced_queries_in_django",
         "USER": "postgres",
-        "PASSWORD": "@9c5m6I5a3",
+        "PASSWORD": "**********",
         "HOST": "localhost",
         "PORT": "5432",
     }
@@ -155,3 +159,6 @@ LOGGING = {
         },
     },
 }
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
