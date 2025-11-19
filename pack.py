@@ -16,7 +16,7 @@ def pack():
                 archive_path = os.path.relpath(file_path, os.getcwd())
                 current_dir = os.path.basename(root)
                 if file in ['requirements.txt', 'manage.py', 'caller.py']\
-                        or current_dir in ['main_app', 'orm_skeleton', 'migrations']:
+                        or current_dir in ['main_app', 'orm_skeleton', 'migrations'] and ('__pycache__' and '.venv') not in root:
                     zipf.write(file_path, archive_path)
 
     print('Submission created!')
